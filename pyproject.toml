@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+# BirdBand needs no build step to run: `python3 birdband.py <command>` is the
+# tool.  This manifest exists so `pip install -e .` can put a `birdband`
+# console command on PATH (and so pytest knows where the tests live).
+[project]
+name = "birdband"
+version = "1.0.0"
+description = "Offline banding record keeper: wing chord and weight log, recapture history tracker."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+birdband = "birdband:main"
+
+[tool.setuptools]
+py-modules = ["birdband"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

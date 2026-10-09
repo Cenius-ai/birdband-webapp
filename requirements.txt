@@ -1,0 +1,3 @@
+# BirdBand itself has NO runtime dependencies - standard library only.
+# This file exists so the test suite's runner is a declared, pinned dependency.
+pytest==8.3.5
